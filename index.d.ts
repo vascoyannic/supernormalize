@@ -13,13 +13,14 @@ declare function normalizeWhitespace(string: string): string;
 
 declare function supernormalize(string: string): string;
 
-declare module "supernormalize" {
-  export = {
-    normalizeCase,
-    normalizeMarks,
-    normalizeByDictionary,
-    normalizeHomoglyphs,
-    normalizeWhitespace,
-    supernormalize,
-  };
-}
+declare const supernormalizeModule: {
+  normalizeCase;
+  normalizeMarks;
+  normalizeByDictionary;
+  normalizeHomoglyphs;
+  normalizeWhitespace;
+  supernormalize;
+};
+
+export = supernormalizeModule;
+export as namespace supernormalizeModule;
